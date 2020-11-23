@@ -1,0 +1,33 @@
+server:
+   port: 8005
+   error:
+      whitelabel:
+         enabled: true
+         
+mybatis: 
+  config-location: "classpath:mybatis/mybatis.cfg.xml"        # mybatis配置文件所在路径
+  mapper-locations: 
+    - "classpath:mybatis/mapper/**/*.xml"                     # mapper映射文件
+  type-aliases-package: com.lisw.springcloud.entity            # 别名类所在包
+
+eureka:
+   client:
+      register-with-eureka: false #服务消费者端不提供服务,不必将应用注册至Eureka
+      service-url:
+         defaultZone: http://eureka9001.com:9001/eureka/,http://eureka9003.com:9003/eureka/,http://eureka9002.com:9002/eureka/
+
+spring:
+   resources:
+      static-locations: "classpath:"
+   freemarker:
+      template-loader-path: "classpath:templates/jsp/"
+      suffix: .html
+      content-type: text/html
+      charset: UTF-8
+
+   datasource:
+      driver-class-name: "com.mysql.jdbc.Driver"   # mysql驱动包      
+      type: "com.alibaba.druid.pool.DruidDataSource" # 当前数据源操作类型
+      url: "jdbc:mysql://localhost:3306/lsw" # 数据库名称
+      username: "root"
+      password: "123456"

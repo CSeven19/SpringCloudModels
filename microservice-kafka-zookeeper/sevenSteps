@@ -1,0 +1,12 @@
+1 zookeeper:
+(1) 下载资源zookeeper-3.4.10.tar.gz
+(2) 修改conf下的配置为zoo.cfg文件.
+(3) 指定zoo.cfg的dataDir地址
+(4) zkServer.cmd 启动
+(5) bin/zkCli.sh -server 192.168.0.1:2181 连接 
+2 kafka:
+(1) 下载资源kafka_2.12-2.1.1.tgz
+(2) 参考Windows上Kafka运行环境安装, 其中注意zookeeper.properties的dataDir要和zookeeper中一致.
+3 zookeeper+kafka java整合.
+(1) 
+(2) 参考 springboot整合kafka(window版kafka简单向) 整合kafka到springboot，并测试.

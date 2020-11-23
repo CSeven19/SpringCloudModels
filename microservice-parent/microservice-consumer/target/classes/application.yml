@@ -1,0 +1,8 @@
+server: 
+  port: 8005
+  
+eureka:
+  client:
+    register-with-eureka: false #服务消费者端不提供服务,不必将应用注册至Eureka
+    service-url: 
+      defaultZone: http://eureka9001.com:9001/eureka/,http://eureka9003.com:9003/eureka/,http://eureka9002.com:9002/eureka/

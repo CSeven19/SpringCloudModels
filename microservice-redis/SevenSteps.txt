@@ -1,0 +1,7 @@
+Redis Steps:(类似ES)
+1 安装Redis并启动
+2 配置pom.xml(包含springboot+redis+spring对redis封装的redistemplate)
+3 配置application.yml的相关数据(含redis)
+4 配置RedisConfig.java
+5 设置Redis的service:RedisService.java
+6 测试类：RedisConfigTest.java

@@ -1,0 +1,16 @@
+eureka:
+  instance:
+    #hostname: localhost
+    hostname: eureka9003.com
+  client:
+    #注册配置
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 该段会导致com.sun.jersey.api.client.ClientHandlerException : java.net.ConnectException : Connection异常，本服务器虽然添加了不注册自己配置但是还是会寻找注册.
+      defaultZone: http://localhost:9001/eureka/,http://localhost:9002/eureka/
+      #defaultZone: http://eureka9001.com:9001/eureka/,http://eureka9002.com:9002/eureka/
+  #server:
+    #enable-self-preservation = false #禁用自我保护模式,自我保护最大程度保护健康的微服务不被注销，因此一般不设置该属性.
+server:
+  port: 9003

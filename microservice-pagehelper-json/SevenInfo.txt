@@ -1,0 +1,14 @@
+PageHelper Steps:
+
+1 pom.xml中配置。参考文档。
+2 application.yml配置。参考文档.
+3 PageHelperConfig.java设置config.
+4 设置类似redistemplate的PageResultBean.java的模板类.
+5 UserServiceImpl.java中设置第几页，每页多少，并通过dao获取list<T>然后转换成PageResultBean<T>并返回给controller
+6 controller中将PageResultBean转换成JSONArray并被调用后返回测试数据。
+
+JSON Steps:
+
+1 pom.xml中配置
+2 PageResultBean的要被转的bean中配置属性的描述符
+3 调用JSON的对应接口转换

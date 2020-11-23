@@ -1,0 +1,17 @@
+log Steps:
+1 由于springboot集成了logback日志，可以直接配置后使用。
+2 如果不想使用logback日志，由于其和slf4j会有日志框架冲突，所以需要于pom。xml对应的springboot下排除掉logback.
+
+shiro Steps:
+1 pom.xml中配置对应包
+2 配置shiro所需的鉴别Realm的数据存储文档：如mysql数据库保存或者shiro.ini保存了用户及权限.
+3 可以自定义Realm，MyRealm1.java+shiro-realm.ini
+4 测试:Shiro.Test
+
+Spring Security Steps:
+1 pom.xml中配置对应包
+2 config文件:DruidConfig.java+ThreadPoolConfig.java+SpingSecurityConfig.java(核心:设置认证方式:比如过滤/login)
+3 继承UserDetails的SecurityUser.java
+4 SpingSecurityConfig中所需的数据库打通,以获得用来认证鉴权的数据源.
+5 LoginController.java中设置/login请求，返回login页面
+6 设置login。html用于用户输入用户名、密码以便测试.
